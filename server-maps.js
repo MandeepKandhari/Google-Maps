@@ -7,7 +7,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-const Google_Maps_Key = process.env.Google_Maps_Key
+const Google_Maps_Key = process.env.Google_Maps_Key;
+const PORT = process.env.PORT || 8080;
 
 
 const googleMapsClient = require('@google/maps').createClient({
@@ -138,7 +139,10 @@ photo.asPromise()
 
 
 
-app.listen(8080);
+app.listen(PORT, () => {
+console.log(`App listening on port ${PORT}`);
+console.log('Press Ctrl+C to quit.');
+});
 
 
 /*
