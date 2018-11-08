@@ -7,8 +7,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+const Google_Maps_Key = process.env.Google_Maps_Key
+
+
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyDk_6FzGzfxK3Bzc0InMjQDNKtPUdhXtuY',
+  key: Google_Maps_Key,
   Promise: Promise
 });
 
@@ -135,7 +138,7 @@ photo.asPromise()
 
 
 
-app.listen(3002);
+app.listen(8080);
 
 
 /*
